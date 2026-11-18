@@ -12,16 +12,21 @@
             color: #333;
             line-height: 1.6;
         }
-        /* အပေါ်ပိုင်း Banner ကို ဒေါင်လိုက် ပိုကျယ်အောင် ချဲ့ပေးထားသည် (Padding ကို 130px သို့ တိုးထားသည်) */
+        /* မျက်နှာပြင်အပြည့် (100vh) ဖြစ်စေရန် ပြင်ဆင်ထားသည် */
         .hero-section {
             position: relative;
             background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: white;
             text-align: center;
-            padding: 130px 20px;
+            height: 100vh; /* မျက်နှာပြင်အပြည့် အမြင့် */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            width: 100%;
         }
         .hero-section video {
             position: absolute;
@@ -44,12 +49,27 @@
             position: relative;
             z-index: 2;
         }
-        .hero-section h1 { font-size: 2.4rem; margin-bottom: 10px; }
-        .hero-section p { font-size: 1.1rem; opacity: 0.9; }
+        .hero-section h1 { font-size: 2.5rem; margin-bottom: 12px; }
+        .hero-section p { font-size: 1.15rem; opacity: 0.9; }
+
+        /* အောက်သို့ Scroll ဆွဲရန် အချက်ပြစာသား */
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            z-index: 2;
+            font-size: 0.95rem;
+            opacity: 0.85;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
 
         .container {
             max-width: 800px;
-            margin: 40px auto;
+            margin: 50px auto;
             padding: 0 20px;
         }
         .section-title {
@@ -110,6 +130,8 @@
             <h1>🩺 Physiology Learning Hub</h1>
             <p>ဆေးပညာ Physiology သင်ခန်းစာများ စုစည်းရာ</p>
         </div>
+
+        <div class="scroll-hint">⬇ အောက်သို့ ဆွဲကြည့်ရန်</div>
     </div>
 
     <div class="container">
