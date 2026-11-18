@@ -3,112 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physiology Lectures - ကိုယ်ပိုင် Website</title>
+    <title>Physiology Learning Hub</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: 'Pyidaungsu', sans-serif, system-ui;
             background-color: #f0f2f5;
             color: #333;
             line-height: 1.6;
         }
-        header {
+        /* Header & Logo Video Section */
+        .hero-section {
             background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: white;
             text-align: center;
             padding: 40px 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-        .video-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        .logo-video-box {
+            max-width: 320px; /* Logo ဗွီဒီယို အရွယ်အစား */
+            margin: 0 auto 20px auto;
+            border-radius: 16px;
             overflow: hidden;
-            margin-bottom: 30px;
-            transition: transform 0.3s ease;
-        }
-        .video-card:hover {
-            transform: translateY(-5px);
-        }
-        .video-container {
-            position: relative;
-            width: 100%;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border: 3px solid rgba(255,255,255,0.2);
             background: #000;
         }
-        video {
+        .logo-video-box video {
             width: 100%;
-            height: auto;
             display: block;
         }
-        .video-info {
-            padding: 20px;
+        .hero-section h1 { font-size: 2rem; margin-bottom: 8px; }
+        .hero-section p { font-size: 1rem; opacity: 0.9; }
+
+        /* Modules Container */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
-        .video-info h2 {
-            font-size: 1.4rem;
+        .section-title {
+            font-size: 1.3rem;
             color: #1e3c72;
-            margin-bottom: 8px;
+            margin-bottom: 20px;
+            border-left: 5px solid #1e3c72;
+            padding-left: 12px;
         }
-        .video-info p {
-            color: #666;
+        /* Module Card (Folder Link) */
+        .module-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid #e1e4e8;
+        }
+        .module-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(30, 60, 114, 0.15);
+            border-color: #2a5298;
+        }
+        .module-info h2 {
+            font-size: 1.3rem;
+            color: #1e3c72;
+            margin-bottom: 5px;
+        }
+        .module-info p {
             font-size: 0.95rem;
+            color: #666;
+        }
+        .arrow-icon {
+            font-size: 1.5rem;
+            color: #2a5298;
+            font-weight: bold;
         }
         footer {
             text-align: center;
             padding: 20px;
             color: #777;
             font-size: 0.9rem;
-            background: #fff;
-            margin-top: 40px;
-            border-top: 1px solid #e7e7e7;
+            margin-top: 60px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>🩺 Physiology Learning Hub</h1>
-        <p>ဆေးပညာ Physiology သင်ခန်းစာ ဗွီဒီယိုများ</p>
-    </header>
-
-    <div class="container">
-        
-        <!-- Lecture 1 -->
-        <div class="video-card">
-            <div class="video-container">
-                <video controls>
-                    <source src="att.o0kg5zxCQnfRPjleWuAm9bwkh..." type="video/mp4">
-                    သင့်ဘရောက်ဇာမှ ဗွီဒီယိုကို မပံ့ပိုးပါ။
-                </video>
-            </div>
-            <div class="video-info">
-                <h2>Lecture 1: Physiology အခြေခံ မိတ်ဆက်</h2>
-                <p>ဒီသင်ခန်းစာမှာတော့ Physiology ရဲ့ အခြေခံ သဘောတရားတွေနဲ့ ခန္ဓာကိုယ်တွင်း လုပ်ဆောင်ချက်တွေကို ရှင်းပြထားပါတယ်။</p>
-            </div>
+    <!-- အပေါ်ပိုင်း Logo Video နှင့် ခေါင်းစဉ် -->
+    <div class="hero-section">
+        <div class="logo-video-box">
+            <!-- autoplay loop muted playsinline ထည့်ထားသဖြင့် Logo လို အလိုအလျောက် ပြန်ကျော့နေပါမည် -->
+            <video autoplay loop muted playsinline>
+                <source src="att.o0kg5zxCQnfRPjleWuAm9bwkh..." type="video/mp4">
+            </video>
         </div>
+        <h1>🩺 Physiology Learning Hub</h1>
+        <p>ဆေးပညာ Physiology သင်ခန်းစာများ စုစည်းရာ</p>
+    </div>
 
-        <!-- ထပ်မံတင်လိုပါက ဤနေရာတွင် video-card အသစ် ထပ်ထည့်နိုင်ပါသည် -->
+    <!-- အောက်ပိုင်း Modules များ (Folder ပုံစံ) -->
+    <div class="container">
+        <h3 class="section-title">📚 Study Modules</h3>
+
+        <!-- Respiratory Module ကို နှိပ်လိုက်လျှင် respiratory/index.html သို့ ရောက်သွားပါမည် -->
+        <a href="respiratory/index.html" class="module-card">
+            <div class="module-info">
+                <h2>🫁 Respiratory Module</h2>
+                <p>အသက်ရှူလမ်းကြောင်းဆိုင်ရာ Physiology သင်ခန်းစာ ဗွီဒီယိုများ</p>
+            </div>
+            <div class="arrow-icon">➔</div>
+        </a>
+
+        <!-- နောက်ထပ် Module အသစ်များ ထပ်တိုးလိုပါက ဤနေရာတွင် ထပ်ထည့်နိုင်ပါသည် -->
 
     </div>
 
     <footer>
-        <p>&copy; 2026 My Physiology Website. All rights reserved.</p>
+        <p>&copy; 2026 Physiology Learning Hub</p>
     </footer>
 
 </body>
