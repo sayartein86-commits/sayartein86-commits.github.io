@@ -12,69 +12,106 @@
             color: #333;
             line-height: 1.6;
         }
-        /* မျက်နှာပြင်အပြည့် Hero Section */
+        /* Hero Section - မျက်နှာပြင် တစ်ဝက်စာ (Split Screen Layout) */
         .hero-section {
             position: relative;
             background: linear-gradient(135deg, #0f2042, #1e3c72, #2a5298);
             color: white;
-            text-align: center;
             height: 100vh;
             width: 100%;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            padding: 20px;
+            justify-content: space-between;
+            padding: 50px 8%;
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
-        /* ဗွီဒီယိုကို အပေါ်အောက် ဘေးသား မပြတ်ဘဲ အပြည့်ပေါ်စေရန် */
-        .hero-section video {
-            position: absolute;
-            top: 0;
-            left: 0;
+        /* ဘယ်ဘက်ခြမ်း စာသားနေရာ */
+        .hero-left {
+            flex: 1;
+            z-index: 2;
+            text-align: left;
+            padding-right: 30px;
+        }
+        .hero-left h1 { 
+            font-size: 3rem; 
+            margin-bottom: 15px; 
+            font-weight: 800;
+            line-height: 1.2;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            letter-spacing: 0.5px;
+        }
+        .hero-left p { 
+            font-size: 1.25rem; 
+            color: #e0e6ed;
+            font-weight: 500;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        /* ညာဘက်ခြမ်း ဗွီဒီယိုနေရာ */
+        .hero-right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            height: 100%;
+        }
+        .video-container {
+            width: 100%;
+            max-width: 450px;
+            aspect-ratio: 1 / 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            background: #000;
+        }
+        .video-container video {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* ဗွီဒီယိုတစ်ခုလုံး မပြတ်တောက်ဘဲ အပြည့်ပေါ်စေသည် */
-            opacity: 0.28; /* စာသားများ ပိုပေါ်လွင်စေရန် ဗွီဒီယိုကို အနည်းငယ်လျှော့ထားသည် */
-            z-index: 1;
-            pointer-events: none;
+            object-fit: cover;
+            display: block;
         }
         video::-webkit-media-controls {
             display: none !important;
-        }
-        /* ခေါင်းစဉ်နှင့် Stethoscope ပိုမိုထင်ရှားစေရန် အရိပ်ထည့်ခြင်း */
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            padding: 20px;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.85); /* နောက်ခံအရိပ်ထည့်ထားသဖြင့် စာသားပိုပေါ်မည် */
-        }
-        .hero-section h1 { 
-            font-size: 2.5rem; 
-            margin-bottom: 12px; 
-            font-weight: bold;
-            letter-spacing: 0.5px;
-        }
-        .hero-section p { 
-            font-size: 1.2rem; 
-            color: #ffffff;
-            font-weight: 500;
         }
 
         /* အောက်သို့ Scroll ဆွဲရန် အချက်ပြစာသား */
         .scroll-hint {
             position: absolute;
-            bottom: 30px;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 2;
             font-size: 0.95rem;
             text-shadow: 0 2px 8px rgba(0,0,0,0.8);
             animation: bounce 2s infinite;
         }
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+            0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+            40% { transform: translate(-50%, -10px); }
+            60% { transform: translate(-50%, -5px); }
+        }
+
+        /* Responsive Design: ဖုန်းစခရင်ငယ်များအတွက် အောက်ချင်းဆင်းရန် */
+        @media (max-width: 900px) {
+            .hero-section {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                padding: 40px 20px;
+                height: auto;
+                min-height: 100vh;
+            }
+            .hero-left {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            .hero-left h1 { font-size: 2.2rem; }
+            .hero-left p { font-size: 1.1rem; }
+            .video-container { max-width: 280px; }
+            .scroll-hint { position: relative; bottom: auto; margin-top: 30px; }
         }
 
         .container {
@@ -134,11 +171,17 @@
 <body>
 
     <div class="hero-section">
-        <video autoplay loop muted playsinline preload="auto" src="myvideo.mp4"></video>
-        
-        <div class="hero-content">
+        <!-- ဘယ်ဘက်ခြမ်း - ခေါင်းစဉ်နှင့် ဖောင့်အရိပ်များ -->
+        <div class="hero-left">
             <h1>🩺 Physiology Learning Hub</h1>
-            <p>ဆေးပညာ Physiology သင်ခန်းစာများ စုစည်းရာ</p>
+            <p>ဆေးပညာ Physiology သင်ခန်းစာများ စုစည်းရာနေရာ</p>
+        </div>
+
+        <!-- ညာဘက်ခြမ်း - Logo ဗွီဒီယို (သပ်သပ်ရပ်ရပ် ဘောင်ခတ်ထားခြင်း) -->
+        <div class="hero-right">
+            <div class="video-container">
+                <video autoplay loop muted playsinline preload="auto" src="myvideo.mp4"></video>
+            </div>
         </div>
 
         <div class="scroll-hint">⬇ အောက်သို့ ဆွဲကြည့်ရန်</div>
