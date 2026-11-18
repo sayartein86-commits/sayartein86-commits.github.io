@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respiratory Module - Physiology</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Pyidaungsu', sans-serif, system-ui;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+        .back-btn {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        .back-btn:hover { background: rgba(255,255,255,0.3); }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .video-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        video { width: 100%; display: block; background: #000; }
+        .video-info { padding: 20px; }
+        .video-info h2 { font-size: 1.3rem; color: #1e3c72; margin-bottom: 8px; }
+        .video-info p { color: #666; font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- Home Page သို့ ပြန်သွားရန် ခလုတ် -->
+        <a href="../index.html" class="back-btn">⬅ Home Page သို့ ပြန်သွားရန်</a>
+        <h1>🫁 Respiratory Module</h1>
+        <p>အသက်ရှူလမ်းကြောင်းဆိုင်ရာ သင်ခန်းစာ ဗွီဒီယိုများ</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Respiratory Lecture 1 -->
+        <div class="video-card">
+            <video controls>
+                <!-- respiratory folder ထဲသို့ တင်ထားသော ဗွီဒီယိုဖိုင်နာမည်ကို ထည့်ပါ -->
+                <source src="lecture1.mp4" type="video/mp4">
+            </video>
+            <div class="video-info">
+                <h2>Lecture 1: Mechanics of Breathing</h2>
+                <p>အသက်ရှူသွင်းခြင်းနှင့် ရှူထုတ်ခြင်း ဖြစ်စဉ်များကို ရှင်းပြထားပါသည်။</p>
+            </div>
+        </div>
+
+        <!-- နောက်ထပ် Lecture ဗွီဒီယိုများ ထပ်တင်လိုပါက ဤနေရာတွင် video-card အသစ် ထပ်ထည့်ပါ -->
+
+    </div>
+
+</body>
+</html>
