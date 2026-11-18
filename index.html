@@ -12,29 +12,40 @@
             color: #333;
             line-height: 1.6;
         }
+        /* Hero Section အပြည့်အစုံ (Full Width & Height) */
         .hero-section {
+            position: relative;
             background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: white;
             text-align: center;
-            padding: 40px 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-        .logo-video-box {
-            max-width: 320px;
-            margin: 0 auto 20px auto;
-            border-radius: 16px;
+            padding: 80px 20px;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            border: 3px solid rgba(255,255,255,0.2);
-            background: #000;
-        }
-        .logo-video-box video {
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
             width: 100%;
-            display: block;
         }
-        .hero-section h1 { font-size: 2rem; margin-bottom: 8px; }
+        /* နောက်ခံဗွီဒီယိုကို အစွန်းအစမကျန် အပြည့်ဖြန့်ရန် */
+        .hero-section video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+            opacity: 0.3; /* နောက်ခံအပြာရောင်နှင့် လှပစွာရောသွားစေမည့် ပုံရိပ်ဖျော့ ပမာဏ */
+            z-index: 1;
+        }
+        /* စာသားများသည် ဗွီဒီယို၏ အပေါ်ဘက်တွင် ရှိနေစေရန် */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-section h1 { font-size: 2.2rem; margin-bottom: 8px; }
         .hero-section p { font-size: 1rem; opacity: 0.9; }
 
+        /* Modules Container */
         .container {
             max-width: 800px;
             margin: 40px auto;
@@ -92,14 +103,15 @@
 <body>
 
     <div class="hero-section">
-        <div class="logo-video-box">
-            <!-- autoplay loop muted playsinline ထည့်ထားသဖြင့် အလိုအလျောက် ပြန်ကျော့နေပါမည် -->
-            <video autoplay loop muted playsinline>
-                <source src="myvideo.mp4" type="video/mp4">
-            </video>
+        <!-- နောက်ခံဗွီဒီယို (အပြည့်ပေါ်ပြီး အလိုအလျောက် ပလေးမည်) -->
+        <video autoplay loop muted playsinline>
+            <source src="myvideo.mp4" type="video/mp4">
+        </video>
+        
+        <div class="hero-content">
+            <h1>🩺 Physiology Learning Hub</h1>
+            <p>ဆေးပညာ Physiology သင်ခန်းစာများ စုစည်းရာ</p>
         </div>
-        <h1>🩺 Physiology Learning Hub</h1>
-        <p>ဆေးပညာ Physiology သင်ခန်းစာများ စုစည်းရာ</p>
     </div>
 
     <div class="container">
