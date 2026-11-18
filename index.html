@@ -2,27 +2,114 @@
 <html lang="my">
 <head>
     <meta charset="UTF-8">
-    <title>ကျွန်ုပ်၏ ကိုယ်ပိုင် Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physiology Lectures - ကိုယ်ပိုင် Website</title>
     <style>
-        body {
-            font-family: sans-serif;
-            text-align: center;
-            padding-top: 50px;
-            background-color: #f4f4f9;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-        h1 {
+        body {
+            font-family: 'Pyidaungsu', sans-serif, system-ui;
+            background-color: #f0f2f5;
             color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .video-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            overflow: hidden;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            background: #000;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .video-info {
+            padding: 20px;
+        }
+        .video-info h2 {
+            font-size: 1.4rem;
+            color: #1e3c72;
+            margin-bottom: 8px;
+        }
+        .video-info p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 0.9rem;
+            background: #fff;
+            margin-top: 40px;
+            border-top: 1px solid #e7e7e7;
         }
     </style>
 </head>
 <body>
-    <h1>မင်္ဂလာပါ! ကျွန်ုပ်၏ Website မှ ကြိုဆိုပါတယ် 👋</h1>
-    <p>ဒီ Website ကို GitHub Pages နဲ့ တည်ဆောက်ထားပါတယ်။</p>
-    <video controls width="100%">
-    <source src="att.o0kg5zxCQnfRPjleWuAm9bwkh..." type="video/mp4">
 
-</video>
+    <header>
+        <h1>🩺 Physiology Learning Hub</h1>
+        <p>ဆေးပညာ Physiology သင်ခန်းစာ ဗွီဒီယိုများ</p>
+    </header>
 
-</body> 
+    <div class="container">
+        
+        <!-- Lecture 1 -->
+        <div class="video-card">
+            <div class="video-container">
+                <video controls>
+                    <source src="att.o0kg5zxCQnfRPjleWuAm9bwkh..." type="video/mp4">
+                    သင့်ဘရောက်ဇာမှ ဗွီဒီယိုကို မပံ့ပိုးပါ။
+                </video>
+            </div>
+            <div class="video-info">
+                <h2>Lecture 1: Physiology အခြေခံ မိတ်ဆက်</h2>
+                <p>ဒီသင်ခန်းစာမှာတော့ Physiology ရဲ့ အခြေခံ သဘောတရားတွေနဲ့ ခန္ဓာကိုယ်တွင်း လုပ်ဆောင်ချက်တွေကို ရှင်းပြထားပါတယ်။</p>
+            </div>
+        </div>
+
+        <!-- ထပ်မံတင်လိုပါက ဤနေရာတွင် video-card အသစ် ထပ်ထည့်နိုင်ပါသည် -->
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 My Physiology Website. All rights reserved.</p>
+    </footer>
+
+</body>
 </html>
-
