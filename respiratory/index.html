@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Respiratory Module - Physiology</title>
+    <title>Respiratory Module - Physiology Learning Hub</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -12,71 +12,97 @@
             color: #333;
             line-height: 1.6;
         }
-        header {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+        .top-bar {
+            background: linear-gradient(135deg, #0f2042, #1e3c72, #2a5298);
             color: white;
-            padding: 25px 20px;
+            padding: 35px 20px;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
-        .back-btn {
-            display: inline-block;
-            color: white;
-            text-decoration: none;
-            background: rgba(255,255,255,0.2);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
+        .top-bar h1 {
+            font-size: 2rem;
+            margin-bottom: 6px;
         }
-        .back-btn:hover { background: rgba(255,255,255,0.3); }
+        .top-bar p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
         .container {
             max-width: 800px;
-            margin: 30px auto;
+            margin: 40px auto;
             padding: 0 20px;
         }
-        .video-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            overflow: hidden;
-            margin-bottom: 30px;
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #1e3c72;
+            font-weight: bold;
         }
-        video { width: 100%; display: block; background: #000; }
-        .video-info { padding: 20px; }
-        .video-info h2 { font-size: 1.3rem; color: #1e3c72; margin-bottom: 8px; }
-        .video-info p { color: #666; font-size: 0.95rem; }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .section-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid #e1e4e8;
+        }
+        .section-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(30, 60, 114, 0.15);
+            border-color: #2a5298;
+        }
+        .section-info h2 {
+            font-size: 1.3rem;
+            color: #1e3c72;
+            margin-bottom: 5px;
+        }
+        .section-info p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+        .arrow-icon {
+            font-size: 1.5rem;
+            color: #2a5298;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <!-- Home Page သို့ ပြန်သွားရန် ခလုတ် -->
-        <a href="../index.html" class="back-btn">⬅ Home Page သို့ ပြန်သွားရန်</a>
+    <div class="top-bar">
         <h1>🫁 Respiratory Module</h1>
-        <p>အသက်ရှူလမ်းကြောင်းဆိုင်ရာ သင်ခန်းစာ ဗွီဒီယိုများ</p>
-    </header>
+        <p>လေ့လာလိုသော အပိုင်းကို ရွေးချယ်ပါ</p>
+    </div>
 
     <div class="container">
+        <a href="../index.html" class="back-link">⬅ Home သို့ ပြန်သွားရန်</a>
 
-        <!-- နောက်ထပ် Lecture ဗွီဒီယိုများ ထပ်တင်လိုပါက ဤနေရာတွင် video-card အသစ် ထပ်ထည့်ပါ -->
+        <a href="overview/index.html" class="section-card">
+            <div class="section-info">
+                <h2>📌 Respiratory Overview</h2>
+                <p>အသက်ရှူလမ်းကြောင်း Physiology ခြုံငုံသုံးသပ်ချက် ဗွီဒီယိုများ</p>
+            </div>
+            <div class="arrow-icon">➔</div>
+        </a>
 
+        <a href="full-lectures/index.html" class="section-card">
+            <div class="section-info">
+                <h2>🎓 Full Lectures</h2>
+                <p>အသေးစိတ် သင်ခန်းစာ ဗွီဒီယိုအပြည့်အစုံများ</p>
+            </div>
+            <div class="arrow-icon">➔</div>
+        </a>
     </div>
 
 </body>
 </html>
-<div class="video-card">
-    <div style="position: relative; padding-bottom: 56.15%; height: 0; overflow: hidden;">
-        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-            src="https://www.youtube.com/embed/UO5dC68X_Yo?si=venLOyBf0Ndvcmbz"
-            title="YouTube video player" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
-    </div>
-    
-    <div class="video-info">
-        <h2>Lecture 1: Mechanics of Breathing</h2>
-        <p>အသက်ရှူလမ်းကြောင်းဆိုင်ရာ Physiology သင်ခန်းစာ ဗွီဒီယိုများ</p>
-    </div>
-</div>
-
