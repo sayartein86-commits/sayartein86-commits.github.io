@@ -28,7 +28,6 @@
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
-
         /* အပေါ်ထိပ် Welcome to PHYSIOLOGY101 Bling-Bling Banner */
         .top-welcome-banner {
             position: absolute;
@@ -41,4 +40,249 @@
             gap: 14px;
             padding: 12px 32px;
             border-radius: 999px;
-            background:
+            background: rgba(15, 23, 42, 0.62);
+            border: 1.5px solid rgba(255, 223, 128, 0.65);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 0 24px rgba(255, 215, 100, 0.4), inset 0 0 14px rgba(255, 255, 255, 0.14);
+            max-width: 96vw;
+        }
+        .welcome-text {
+            font-family: 'Cinzel', Georgia, serif;
+            font-weight: 900;
+            font-size: 2.6rem;
+            line-height: 1.15;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #fff3b0, #ffd166, #ffffff, #ffd166, #fff3b0);
+            background-size: 250% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shimmerText 3.2s linear infinite;
+            text-shadow: 0 0 18px rgba(255, 214, 102, 0.5);
+             }
+        .sparkle {
+            font-size: 2rem;
+            line-height: 1;
+            display: inline-block;
+            flex-shrink: 0;
+            animation: blingPulse 1.6s ease-in-out infinite alternate;
+        }
+        .sparkle:last-child {
+            animation-delay: 0.8s;
+        }
+        @keyframes shimmerText {
+            0% { background-position: 0% center; }
+            100% { background-position: 250% center; }
+        }
+        @keyframes blingPulse {
+            0% {
+                transform: scale(0.85) rotate(-12deg);
+                opacity: 0.65;
+                filter: drop-shadow(0 0 3px #ffe066);
+            }
+            100% {
+                transform: scale(1.2) rotate(12deg);
+                opacity: 1;
+                filter: drop-shadow(0 0 10px #ffd43b);
+            }
+        }
+
+        /* ဘယ်ဘက်ခြမ်း စာသား */
+        .hero-left {
+            flex: 1;
+            z-index: 2;
+            text-align: left;
+            padding-right: 30px;
+        }
+        .hero-left h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+            line-height: 1.2;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            letter-spacing: 0.5px;
+            }
+        .hero-left p {
+            font-size: 1.25rem;
+            color: #e0e6ed;
+            font-weight: 500;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        /* ညာဘက်ခြမ်း Logo Video */
+        .hero-right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            height: 100%;
+        }
+        .video-container {
+            width: 100%;
+            max-width: 450px;
+            aspect-ratio: 1 / 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            background: #000;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            pointer-events: none;
+        }
+        video::-webkit-media-controls {
+            display: none !important;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            font-size: 0.95rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+            40% { transform: translate(-50%, -10px); }
+            60% { transform: translate(-50%, -5px); }
+        }
+
+        @media (max-width: 900px) {
+            .hero-section {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                padding: 120px 16px 40px;
+                height: auto;
+                min-height: 100vh;
+            }
+            .top-welcome-banner {
+                top: 16px;
+                gap: 8px;
+                padding: 10px 18px;
+                border-radius: 24px;
+            }
+            .welcome-text {
+                font-size: 1.55rem;
+                letter-spacing: 1.5px;
+                text-align: center;
+            }
+            .sparkle {
+                font-size: 1.25rem;
+            }
+            .hero-left {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            .hero-left h1 { font-size: 2.2rem; }
+            .hero-left p { font-size: 1.1rem; }
+            .video-container { max-width: 280px; }
+            .scroll-hint { position: relative; bottom: auto; margin-top: 30px; }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            border-left: 5px solid #1e3c72;
+            padding-left: 12px;
+        }
+        .module-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid #e1e4e8;
+        }
+        .module-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(30, 60, 114, 0.15);
+            border-color: #2a5298;
+        }
+        .module-info h2 {
+            font-size: 1.3rem;
+            color: #1e3c72;
+            margin-bottom: 5px;
+        }
+        .module-info p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+        .arrow-icon {
+            font-size: 1.5rem;
+            color: #2a5298;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 0.9rem;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <div class="top-welcome-banner">
+            <span class="sparkle">✨</span>
+            <span class="welcome-text">Welcome to PHYSIOLOGY101</span>
+            <span class="sparkle">✦</span>
+        </div>
+
+        <div class="hero-left">
+            <h1>🩺 Physiology Learning Hub</h1>
+              <p>ဆေးပညာ Physiology သင်ခန်းစာများ စုစည်းရာနေရာ</p>
+        </div>
+
+        <div class="hero-right">
+            <div class="video-container">
+                <video autoplay loop muted playsinline preload="auto" src="myvideo.mp4"></video>
+            </div>
+        </div>
+
+        <div class="scroll-hint">⬇ အောက်သို့ ဆွဲကြည့်ရန်</div>
+    </div>
+
+    <div class="container">
+        <h3 class="section-title">📚 Study Modules</h3>
+
+        <a href="respiratory/index.html" class="module-card">
+            <div class="module-info">
+                <h2>🫁 Respiratory Module</h2>
+                <p>အသက်ရှူလမ်းကြောင်းဆိုင်ရာ Physiology သင်ခန်းစာ ဗွီဒီယိုများ</p>
+            </div>
+            <div class="arrow-icon">➔</div>
+             </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Physiology Learning Hub</p>
+    </footer>
+
+</body>
+</html>
+            
+        
